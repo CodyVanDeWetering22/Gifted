@@ -17,7 +17,7 @@ function _drawGifts() {
     gifts.forEach(gift => content += gift.giftCardTemplate)
 
     setHTML('giftCard', content)
-    console.log('drawing gifts', content);
+    // console.log('drawing gifts', content);
 
 
 

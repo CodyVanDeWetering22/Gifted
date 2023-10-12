@@ -49,7 +49,22 @@
       <section class="container-fluid">
         <div class="row">
           <div class="col-3">
-            <h1>offcanvas</h1>
+            <h1>Gifted</h1>
+            <form onsubmit="app.SandboxController.createGift(event)">
+              <div class="form-group">
+                <label for="tag">Tag</label>
+                <input type="string" class="form-control" id="tag" name="tag" placeholder="Ur Gif">
+
+              </div>
+              <div class="form-group">
+                <label for="url">url</label>
+                <input type="url" class="form-control" id="url" name="url" placeholder="URL">
+
+              </div>
+
+              <div><button class="btn btn-primary m-2" type="submit">Submit</button></div>
+            </form>
+
           </div>
 
 

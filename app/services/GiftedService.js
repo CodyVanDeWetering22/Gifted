@@ -14,9 +14,9 @@ class GiftedService {
             Pop.error("Can't find gift.")
             return
         }
-        console.log('gift', gift);
+
         gift.opened = true
-        console.log('gift', gift);
+
         const res = await api.put(`api/gifts/${id}`, gift)
         const newGift = new Gifts(res.data)
 
@@ -24,19 +24,13 @@ class GiftedService {
         AppState.gifts.splice(giftIndex, 1, newGift)
 
         AppState.emit('gifts')
-
-
-
-
-
-
     }
 
 
 
     async getAllGifts() {
         const res = await api.get('api/gifts')
-        console.log('gifts', res.data);
+
         const newGifts = res.data.map(giftPOJO => new Gifts(giftPOJO))
         AppState.gifts = newGifts
 
