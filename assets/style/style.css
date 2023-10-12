@@ -1,0 +1,12 @@
+/* BASIC STYLES HERE */
+.locked-template {
+    height: 40h;
+    object-fit: contain;
+    width: 30%;
+}
+
+.locked-template+img {
+
+    max-height: 30vh;
+    max-width: fit-content;
+}
