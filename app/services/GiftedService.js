@@ -9,6 +9,7 @@ import { api } from "./AxiosService.js"
 class GiftedService {
     async unlockGift(id) {
         const gift = AppState.gifts.find(gift => gift.id == id)
+        const giftIndex = AppState.gifts.findIndex(gift => gift.id == id)
         if (!gift) {
             Pop.error("Can't find gift.")
             return
@@ -20,7 +21,7 @@ class GiftedService {
         const newGift = new Gifts(res.data)
 
 
-        AppState.gifts.splice(1, 1, newGift)
+        AppState.gifts.splice(giftIndex, 1, newGift)
 
         AppState.emit('gifts')
 
